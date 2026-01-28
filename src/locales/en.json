@@ -1,0 +1,169 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About Us",
+        "facilities": "Facilities",
+        "gallery": "Gallery",
+        "contact": "Contact Us"
+    },
+    "hero": {
+        "title": "Unique T Fabric",
+        "subtitle": "Weaving Tradition into Modern Luxury"
+    },
+    "facilities": {
+        "title": "Facilities",
+        "cards": {
+            "premium": {
+                "title": "Premium Fabrics",
+                "desc": "Handpicked textiles from the finest looms, ensuring breathable, durable, and luxurious material for every season."
+            },
+            "ethical": {
+                "title": "Ethical Sourcing",
+                "desc": "Commited to sustainable and fair trade practices, supporting local artisans and reducing our environmental footprint."
+            },
+            "design": {
+                "title": "Modern Designs",
+                "desc": "Contemporary patterns designed for the modern era, blending traditional elegance with cutting-edge fashion trends."
+            },
+            "reach": {
+                "title": "Pan-India Reach",
+                "desc": "Delivering affordable luxury to every corner of India with a robust logistics network and timely service."
+            },
+            "quality": {
+                "title": "Quality Assurance",
+                "desc": "Double-checked for perfection. Every meter of fabric undergoes rigorous testing to meet our high standards."
+            },
+            "royal": {
+                "title": "Royal Touch",
+                "desc": "Experience the regal comfort and sophistication that defines our brand, making every outfit feel like a masterpiece."
+            }
+        }
+    },
+    "about": {
+        "subtitle": "Discover Our Story",
+        "title": "Weaving Traditions",
+        "desc": "Founded with a passion for authenticity, Unique T Fabric bridges the gap between traditional Indian artistry and modern fashion demands. Our journey began in the heart of Pune.",
+        "desc2": "We believe that every fabric tells a story. From the handpicked cotton of the Deccan to the shimmering silks of Banaras, our collection is a tribute to the weavers who have kept this art alive for centuries. When you choose Unique T, you are not just buying cloth; you are embracing a legacy of elegance and culture.",
+        "quote": "Quality is not an act, it is a habit.",
+        "button": "Read Our Journey"
+    },
+    "whyUs": {
+        "title": "Why Choose Us",
+        "stats": {
+            "fabrics": {
+                "title": "Premium Fabrics",
+                "desc": "A vast collection of handpicked, high-quality fabrics suited for every occasion and style."
+            },
+            "customers": {
+                "title": "Happy Customers",
+                "desc": "Delighting thousands of customers across India with our commitment to quality and service."
+            },
+            "support": {
+                "title": "Support",
+                "desc": "Always here for you. Our dedicated support team ensures a seamless shopping experience."
+            }
+        }
+    },
+    "getApp": {
+        "badge": "Mobile Exclusive",
+        "title": "Shop Smarter with the Unique T Fabric App",
+        "desc": "Experience the future of fabric shopping. exclusive collections, real-time tracking, and personalized recommendations right at your fingertips.",
+        "checkout": {
+            "title": "Fast Checkout",
+            "desc": "Secure 1-click payments"
+        },
+        "rewards": {
+            "title": "App Rewards",
+            "desc": "Earn points on every order"
+        },
+        "verified": "Verified Secure • 50k+ Downloads"
+    },
+    "comingSoon": {
+        "title": "Coming Soon",
+        "subtitle": "We are crafting a premium mobile experience for you.",
+        "loading": "Loading Experience...",
+        "features": {
+            "native": {
+                "title": "Native Experience",
+                "desc": "Smooth, fast, and optimized for your device."
+            },
+            "notify": {
+                "title": "Smart Notifications",
+                "desc": "Get instant alerts on new arrivals and sales."
+            },
+            "track": {
+                "title": "Live Tracking",
+                "desc": "Track your orders in real-time."
+            }
+        }
+    },
+    "footer": {
+        "brandTitle": "Unique t",
+        "address": {
+            "line1": "Thynk Technology India",
+            "line2": "Office No. 1041, 10th Floor, Gera's Imperium Rise,",
+            "line3": "Opp. Wipro Circle, Hinjewadi Phase 2,",
+            "line4": "Pune - 411057"
+        },
+        "explore": {
+            "title": "Explore",
+            "home": "Home",
+            "about": "About Us",
+            "facilities": "Facilities",
+            "whyUs": "Why Choose Us",
+            "getApp": "Get App"
+        },
+        "legal": {
+            "title": "Legal",
+            "policies": "Legal Policies",
+            "terms": "Terms & Conditions",
+            "privacy": "Privacy Policy",
+            "refund": "Refund & Cancellation Policy",
+            "license": "License & Agreement"
+        },
+        "legalContent": {
+            "policies": {
+                "title": "Legal Policies Overview",
+                "content": "<p>At Unique T Fabric, we are committed to operating with complete transparency and integrity. Our legal policies are designed to protect both our customers and our brand.</p><h5>Compliance</h5><p>We adhere to all applicable Indian laws regarding e-commerce, consumer protection, and textile trade.</p><h5>Ethical Standards</h5><p>We strictly prohibit the use of child labor and ensure fair wages for all artisans involved in our supply chain.</p>"
+            },
+            "terms": {
+                "title": "Terms & Conditions",
+                "content": "<p>Welcome to Unique T Fabric. By accessing our website and app, you agree to the following terms:</p><ul><li><strong>Usage:</strong> Our platform is for personal, non-commercial use only.</li><li><strong>Account:</strong> You are responsible for maintaining the confidentiality of your account credentials.</li><li><strong>Pricing:</strong> Prices are subject to change without notice, but we honor the price at the time of purchase.</li><li><strong>Intellectual Property:</strong> All designs, images, and content are the property of Unique T Fabric.</li></ul>"
+            },
+            "privacy": {
+                "title": "Privacy Policy",
+                "content": "<p>Your privacy is paramount. We collect only necessary data to improve your shopping experience.</p><h5>Data Collection</h5><p>We collect name, address, and contact details for order processing. Payment details are processed securely via third-party gateways (e.g., Razorpay, Stripe).</p><h5>Cookies</h5><p>We use cookies to remember your preferences and cart items.</p><h5>Data Sharing</h5><p>We do NOT sell your data to third parties.</p>"
+            },
+            "refund": {
+                "title": "Refund & Cancellation Policy",
+                "content": "<p>We want you to love your purchase. If not, we're here to help.</p><ul><li><strong>Returns:</strong> You may return items within 7 days of delivery if they are unused and unwashed.</li><li><strong>Refunds:</strong> Processed within 5-7 business days after we receive the returned item.</li><li><strong>Cancellations:</strong> Orders can be cancelled before they are shipped for a full refund.</li><li><strong>Defects:</strong> In case of manufacturing defects, we offer a free replacement or full refund.</li></ul>"
+            },
+            "license": {
+                "title": "License & Agreement",
+                "content": "<p>By purchasing from Unique T Fabric, you are granted a license to use the products for personal use.</p><h5>Resale</h5><p>Resale of our branded products on other platforms (Amazon, Flipkart, etc.) without written authorization is prohibited.</p><h5>Brand Assets</h5><p>You may not use our logo or brand imagery for commercial purposes without permission.</p>"
+            }
+        },
+        "tagline": "\"Weaving stories, one thread at a time.\"",
+        "copyright": "© 2026 Unique t - Fabric India.",
+        "designedBy": "Designed by ThynkTech India."
+    },
+    "assistant": {
+        "name": "Unique Assistant",
+        "greeting": "Hello! I am your Unique Fabric Assistant. I can help you with products, pricing, order tracking, store location, and more. How can I guide you today?",
+        "placeholder": "Ask about location, returns, fabrics...",
+        "launch": "Our mobile app is crafting something amazing for you and will be launching very soon! Stay tuned.",
+        "default": "I'm not sure I understood that. You can ask me about: 'Location', 'Return Policy', 'Fabrics', 'Contact', or 'App Launch'.",
+        "fabric": "We specialize in premium cotton, silk, and linen fabrics sourced directly from artisans using ethical practices.",
+        "products": "We offer a wide range of premium fabrics suitable for shirts, kurtas, and traditional wear. Check out our 'Products' section for more.",
+        "price": "Our fabrics start from very affordable rates without compromising on quality. Please browse our collections for specific pricing.",
+        "contact": "You can reach us at support@thynktech.ltd or call us at 8069640559.",
+        "delivery": "We deliver across India within 5-7 business days. Express shipping is also available.",
+        "about_bot": "I am an AI assistant designed to help you navigate Unique T Fabric. Ask me anything about our brand!",
+        "location": "We are located at Office No. 1041, 10th Floor, Gera's Imperium Rise, Hinjewadi Phase 2, Pune - 411057.",
+        "hours": "Our support team is available Monday to Saturday, from 9:00 AM to 6:00 PM.",
+        "payment": "We accept all major payment modes including UPI, Credit/Debit Cards, and Netbanking via secure gateways.",
+        "return_policy": "You can return unused products within 7 days of delivery for a full refund or exchange.",
+        "why_us": "Choose us for our 5000+ happy customers, premium quality fabrics, and 24/7 dedicated support.",
+        "bulk": "For bulk or wholesale inquiries, please email us directly at support@thynktech.ltd for special rates."
+    }
+}

@@ -1,37 +1,93 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ShoppingBag, Users, Headphones } from 'lucide-react';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
+import { useTranslation } from 'react-i18next';
 import './WhyChooseUs.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import VanillaTilt from 'vanilla-tilt';
 
 const WhyChooseUs = () => {
-  useScrollAnimation();
+  const { t } = useTranslation();
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
 
   const stats = [
-    { number: "100+", title: "Premium Fabrics" },
-    { number: "5k+", title: "Happy Customers" },
-    { number: "24/7", title: "Support" }
+    {
+      number: "100+",
+      title: t('whyUs.stats.fabrics.title'),
+      desc: t('whyUs.stats.fabrics.desc'),
+      icon: ShoppingBag
+    },
+    {
+      number: "5k+",
+      title: t('whyUs.stats.customers.title'),
+      desc: t('whyUs.stats.customers.desc'),
+      icon: Users
+    },
+    {
+      number: "24/7",
+      title: t('whyUs.stats.support.title'),
+      desc: t('whyUs.stats.support.desc'),
+      icon: Headphones
+    }
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Staggered Entry for Stats
+      gsap.fromTo(cardsRef.current,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%"
+          }
+        }
+      );
+    }, sectionRef);
+
+    // Initialize Vanilla Tilt
+    const validCards = cardsRef.current.filter(el => el !== null);
+    VanillaTilt.init(validCards, {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.1,
+      scale: 1.05
+    });
+
+    return () => {
+      ctx.revert();
+      validCards.forEach(el => el.vanillaTilt && el.vanillaTilt.destroy());
+    };
+  }, []);
+
   return (
-    <section id="whyUs" className="py-5 bg-light text-center">
+    <section id="whyUs" className="py-5 bg-light text-center" ref={sectionRef}>
       <div className="container py-5">
-        <h2 className="display-4 text-maroon mb-5 fw-bold animate-on-scroll">Why Choose Us</h2>
+        <h2 className="display-4 text-maroon mb-5 fw-bold font-heading">{t('whyUs.title')}</h2>
 
         <div className="row g-5">
           {stats.map((item, index) => {
-            let Icon;
-            if (index === 0) Icon = ShoppingBag;
-            else if (index === 1) Icon = Users;
-            else Icon = Headphones;
-
+            const Icon = item.icon;
             return (
               <div className="col-md-4" key={index}>
-                <div className={`feature-card h-100 scroll-3d-zoom animate-on-scroll delay-${(index + 1) * 100}`}>
-                  <div className="feature-icon-wrapper">
+                <div
+                  className="wcu-card h-100"
+                  ref={el => cardsRef.current[index] = el}
+                  style={{ transformStyle: 'preserve-3d' }}
+                >
+                  <div className="feature-icon-wrapper" style={{ transform: 'translateZ(30px)' }}>
                     <Icon size={40} strokeWidth={1.5} />
                   </div>
-                  <h3 className="h2 mb-3 fw-bold text-dark">{item.number}</h3>
-                  <p className="lead text-muted">{item.title}</p>
+                  <h3 className="h2 mb-2 fw-bold text-dark" style={{ transform: 'translateZ(20px)' }}>{item.number}</h3>
+                  <h5 className="mb-3 text-gold text-uppercase letter-spacing-1" style={{ transform: 'translateZ(20px)' }}>{item.title}</h5>
+                  <p className="text-muted small" style={{ transform: 'translateZ(20px)' }}>{item.desc}</p>
                 </div>
               </div>
             );

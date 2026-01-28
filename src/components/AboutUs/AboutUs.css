@@ -16,26 +16,9 @@
     pointer-events: none;
 }
 
-.video-frame {
-    position: relative;
-    padding: 15px;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    transition: transform 0.5s ease;
-}
-
-.video-frame::before {
-    content: '';
-    position: absolute;
-    inset: 5px;
-    border: 1px solid rgba(var(--bs-warning-rgb), 0.3);
-    pointer-events: none;
-    z-index: 2;
-}
-
-.video-frame:hover {
-    transform: translateY(-5px);
+/* Frame styles removed as per request */
+.video-border-glow {
+    display: none;
 }
 
 .about-subtitle {

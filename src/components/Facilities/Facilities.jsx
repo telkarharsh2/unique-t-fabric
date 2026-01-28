@@ -1,46 +1,111 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Tag, Globe, Truck, CheckCircle, ShieldCheck, Crown } from 'lucide-react';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
+import { useTranslation } from 'react-i18next';
+import './Facilities.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import VanillaTilt from 'vanilla-tilt';
 
 const Facilities = () => {
-  useScrollAnimation();
+  const { t } = useTranslation();
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
 
-  const facilitiesData = [
-    { title: 'Premium Fabrics', desc: 'Handpicked textiles from the finest looms.' },
-    { title: 'Ethical Sourcing', desc: 'Sustainable and fair trade practices.' },
-    { title: 'Modern Designs', desc: 'Contemporary patterns for the modern era.' },
-    { title: 'Pan-India Reach', desc: 'Delivering luxury to every corner of India.' },
-    { title: 'Quality Assurance', desc: 'Double-checked for perfection.' },
-    { title: 'Royal Touch', desc: 'Experience the regal comfort.' }
+  const facilitiesDataFixed = [
+    {
+      icon: Tag,
+      title: t('facilities.cards.premium.title'),
+      desc: t('facilities.cards.premium.desc')
+    },
+    {
+      icon: Globe,
+      title: t('facilities.cards.ethical.title'),
+      desc: t('facilities.cards.ethical.desc')
+    },
+    {
+      icon: Crown,
+      title: t('facilities.cards.design.title'),
+      desc: t('facilities.cards.design.desc')
+    },
+    {
+      icon: Truck,
+      title: t('facilities.cards.reach.title'),
+      desc: t('facilities.cards.reach.desc')
+    },
+    {
+      icon: CheckCircle,
+      title: t('facilities.cards.quality.title'),
+      desc: t('facilities.cards.quality.desc')
+    },
+    {
+      icon: ShieldCheck,
+      title: t('facilities.cards.royal.title'),
+      desc: t('facilities.cards.royal.desc')
+    }
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Staggered Entry Animation
+      gsap.fromTo(cardsRef.current,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%"
+          }
+        }
+      );
+    }, sectionRef);
+
+    // Initialize Vanilla Tilt
+    // We only apply it if the ref exists
+    const validCards = cardsRef.current.filter(el => el !== null);
+    VanillaTilt.init(validCards, {
+      max: 10,        // Max tilt amount
+      speed: 400,     // Speed of the enter/exit transition
+      glare: true,    // Add a glare effect
+      "max-glare": 0.2,
+      scale: 1.05     // Slight zoom
+    });
+
+    return () => {
+      ctx.revert();
+      // Destroy tilt instances
+      validCards.forEach(el => el.vanillaTilt && el.vanillaTilt.destroy());
+    };
+  }, []);
+
   return (
-    <section id="facilities" className="py-5 bg-light position-relative">
+    <section id="facilities" className="facilities-container" ref={sectionRef}>
       <div className="container py-5">
-        <div className="text-center mb-5 animate-on-scroll" data-aos="fade-up">
-          <h2 className="display-4 fw-bold font-heading">Facilities</h2>
+        <div className="text-center mb-5">
+          <h2 className="display-4 fw-bold font-heading" style={{ color: '#800000' }}>{t('facilities.title')}</h2>
           <div className="d-flex justify-content-center mt-3">
             <div className="bg-warning" style={{ width: '60px', height: '3px' }}></div>
           </div>
         </div>
 
-        <div className="row g-4">
-          {facilitiesData.map((item, index) => {
-            let Icon = Tag;
-            if (index === 1) Icon = Globe;
-            if (index === 2) Icon = Crown;
-            if (index === 3) Icon = Truck;
-            if (index === 4) Icon = CheckCircle;
-            if (index === 5) Icon = ShieldCheck;
-
+        <div className="row g-5">
+          {facilitiesDataFixed.map((item, index) => {
+            const Icon = item.icon;
             return (
               <div key={index} className="col-md-6 col-lg-4">
-                <div className="p-4 bg-white rounded-4 shadow-sm h-100 hover-lift border-bottom border-4 border-white hover-border-warning transition-all scroll-3d-flip animate-on-scroll" style={{ transitionDelay: `${index * 100}ms` }}>
-                  <div className="mb-3 text-warning">
-                    <Icon size={32} strokeWidth={1.5} />
+                <div
+                  className="magic-card h-100"
+                  ref={el => cardsRef.current[index] = el}
+                  style={{ transformStyle: 'preserve-3d' }} // Required for tilt pop-out effects if any nested
+                >
+                  <div className="mb-3 text-warning" style={{ transform: 'translateZ(20px)' }}>
+                    <Icon size={40} strokeWidth={1.5} />
                   </div>
-                  <h4 className="fw-bold mb-2 font-heading">{item.title}</h4>
-                  <p className="text-muted small mb-0">{item.desc}</p>
+                  <h4 className="fw-bold mb-3" style={{ transform: 'translateZ(20px)' }}>{item.title}</h4>
+                  <p className="small mb-0 opacity-75" style={{ transform: 'translateZ(20px)' }}>{item.desc}</p>
                 </div>
               </div>
             );

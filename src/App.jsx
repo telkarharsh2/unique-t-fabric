@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Home from './pages/Home';
 import AOS from 'aos';
+import FabricAssistant from './components/Shared/FabricAssistant';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Home />
+      <FabricAssistant />
     </div>
   );
 }

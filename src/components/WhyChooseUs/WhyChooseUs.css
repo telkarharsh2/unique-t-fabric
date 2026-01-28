@@ -1,35 +1,31 @@
-.feature-card {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+/* Why Choose Us Card - Simple Clean Style */
+.wcu-card {
+    background: #f8f9fa;
+    /* Off-white for card */
+    width: 100%;
+    min-height: 350px;
+    padding: 30px;
     position: relative;
-    overflow: hidden;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     z-index: 1;
 }
 
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(var(--bs-warning-rgb), 0.08) 0%, rgba(255, 255, 255, 0) 100%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
-}
-
-.feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-    border-color: rgba(var(--bs-warning-rgb), 0.3);
-}
-
-.feature-card:hover::before {
-    opacity: 1;
+.wcu-card:hover {
+    background: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(128, 0, 0, 0.2);
+    /* Subtle maroon border on hover */
 }
 
 .feature-icon-wrapper {

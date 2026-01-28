@@ -12,13 +12,7 @@ import Footer from '../components/Footer/Footer';
 const Home = () => {
   return (
     <>
-      {/* Top Right Logo */}
-      <div className="position-absolute end-0 pe-4 z-3" style={{ top: '-40px' }}>
-        <div className="d-flex align-items-center justify-content-center"
-          style={{ width: '200px', height: '200px' }}>
-          <img src={logoImg} alt="Unique T Fabric" className="img-fluid object-fit-contain" />
-        </div>
-      </div>
+      
 
       <Navbar />
       <Hero />
