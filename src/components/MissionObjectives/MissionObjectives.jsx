@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Smartphone, Download, Star, ShieldCheck, Zap } from 'lucide-react';
+import { Smartphone, Download, Star, ShieldCheck, Zap, Bell } from 'lucide-react';
 import appMockup from '../../assets/images/onboarding.png';
 import { useTranslation } from 'react-i18next';
 import './MissionObjectives.css';
@@ -81,7 +81,7 @@ const MissionObjectives = () => {
                                 <span className="badge bg-warning text-dark px-3 py-2 rounded-pill mb-4 fw-bold shadow-sm">
                                     <span className="d-flex align-items-center gap-2">
                                         <Smartphone size={16} />
-                                        {t('getApp.badge')}
+                                        Coming Soon
                                     </span>
                                 </span>
                             </div>
@@ -170,15 +170,15 @@ const MissionObjectives = () => {
                                 </div>
                             </div>
 
-                            {/* Floating Stats Card */}
+                            {/* Floating Stats Card - CHANGED TO LAUNCH ALERT */}
                             <div className="position-absolute bottom-0 start-0 mb-5 ms-md-4 p-3 bg-white rounded-4 shadow-lg z-3 d-none d-md-block" style={{ animation: 'float 4s ease-in-out infinite' }}>
                                 <div className="d-flex align-items-center gap-3">
-                                    <div className="bg-success bg-opacity-10 p-2 rounded-circle text-success">
-                                        <Star size={20} fill="currentColor" />
+                                    <div className="bg-warning bg-opacity-10 p-2 rounded-circle text-warning">
+                                        <Bell size={20} fill="currentColor" />
                                     </div>
                                     <div>
-                                        <p className="mb-0 fw-bold clr-dark">4.9/5 Rating</p>
-                                        <small className="text-muted">From 2k+ reviews</small>
+                                        <p className="mb-0 fw-bold clr-dark">Launch Alert</p>
+                                        <small className="text-muted">Get Notified</small>
                                     </div>
                                 </div>
                             </div>

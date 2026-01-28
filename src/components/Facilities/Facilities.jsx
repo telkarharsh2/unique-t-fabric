@@ -83,28 +83,28 @@ const Facilities = () => {
 
   return (
     <section id="facilities" className="facilities-container" ref={sectionRef}>
-      <div className="container py-5">
-        <div className="text-center mb-5">
+      <div className="container py-4">
+        <div className="text-center mb-4">
           <h2 className="display-4 fw-bold font-heading" style={{ color: '#800000' }}>{t('facilities.title')}</h2>
           <div className="d-flex justify-content-center mt-3">
             <div className="bg-warning" style={{ width: '60px', height: '3px' }}></div>
           </div>
         </div>
 
-        <div className="row g-5">
+        <div className="row g-3">
           {facilitiesDataFixed.map((item, index) => {
             const Icon = item.icon;
             return (
               <div key={index} className="col-md-6 col-lg-4">
                 <div
-                  className="magic-card h-100"
+                  className="magic-card h-100 p-3" // Added p-3 here explicitly if not handled by CSS, or assuming magic-card has padding we want to override/reduce?
                   ref={el => cardsRef.current[index] = el}
-                  style={{ transformStyle: 'preserve-3d' }} // Required for tilt pop-out effects if any nested
+                  style={{ transformStyle: 'preserve-3d' }}
                 >
-                  <div className="mb-3 text-warning" style={{ transform: 'translateZ(20px)' }}>
+                  <div className="mb-2 text-warning" style={{ transform: 'translateZ(20px)' }}>
                     <Icon size={40} strokeWidth={1.5} />
                   </div>
-                  <h4 className="fw-bold mb-3" style={{ transform: 'translateZ(20px)' }}>{item.title}</h4>
+                  <h4 className="fw-bold mb-2" style={{ transform: 'translateZ(20px)' }}>{item.title}</h4>
                   <p className="small mb-0 opacity-75" style={{ transform: 'translateZ(20px)' }}>{item.desc}</p>
                 </div>
               </div>

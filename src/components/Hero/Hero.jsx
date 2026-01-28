@@ -1,6 +1,6 @@
 import React from 'react';
 
-import video1 from '../../assets/videos/Hero1.mp4';
+import video1 from '../../assets/videos/Hero3.mp4';
 
 const Hero = () => {
   return (
@@ -21,6 +21,7 @@ const Hero = () => {
                 autoPlay
                 muted
                 loop
+                playsInline
                 className="d-block w-100 h-100 object-fit-cover"
               />
               <div className="position-absolute top-0 start-0 w-100 h-100"
