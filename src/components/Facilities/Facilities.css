@@ -17,8 +17,8 @@
     background: #f8f9fa;
     /* Slightly off-white to distinguish from white background */
     width: var(--card-width);
-    min-height: 400px;
-    padding: 30px;
+    min-height: 250px;
+    padding: 20px;
     position: relative;
     border-radius: 12px;
     /* Slightly rounder */

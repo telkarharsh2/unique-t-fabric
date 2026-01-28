@@ -3,7 +3,9 @@ import { MessageSquareText, Send, X, Bot, User, Truck, MapPin, CreditCard, Refre
 import { useTranslation } from 'react-i18next';
 import './FabricAssistant.css';
 
-const FabricAssistant = () => {
+import Skeleton from './Skeleton';
+
+const FabricAssistant = ({ loading }) => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
@@ -174,6 +176,14 @@ const FabricAssistant = () => {
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') handleSend();
     };
+
+    if (loading) {
+        return (
+            <div className="fabric-assistant-container">
+                <Skeleton type="circle" width="60px" height="60px" style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }} />
+            </div>
+        );
+    }
 
     return (
         <div className="fabric-assistant-container">
