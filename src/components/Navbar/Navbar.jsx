@@ -113,13 +113,13 @@ const Navbar = () => {
         </nav>
         {/* Mobile Menu Popover (custom) */}
         <div className={`mobile-popover ${mobileMenuOpen ? 'show' : ''}`}>
-          <div className="mobile-popover-body bg-white shadow-lg">
+          <div className="mobile-popover-body">
             <ul className="mobile-nav-list">
               {menuItems.map((item) => (
                 <li className="nav-item" key={item.href}>
                   <a
                     href={item.href}
-                    className="nav-icon-link d-flex align-items-center justify-content-between w-100"
+                    className="nav-icon-link d-flex align-items-center justify-content-between"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <div className="icon-box-inner">
