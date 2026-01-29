@@ -4,6 +4,7 @@ import logoImg from '../../assets/images/withoutbg.png';
 import { Phone, Mail, Globe, MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import './Footer.css';
+import TTI from '../../assets/images/tti.png';
 
 const Footer = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -30,17 +31,25 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="footer-section pt-5 pb-4">
+      <footer className="footer-section">
         <div className="footer-gradient-line"></div>
 
         <div className="container position-relative py-4" style={{ zIndex: 1 }}>
-          <div className="row g-5">
+          <div className="row g-5 pt-4">
 
             {/* Brand & Address */}
             <div className="col-lg-4 col-md-6" data-aos="fade-up">
-              <h4 className="footer-brand-title text-uppercase">{t('footer.brandTitle')}</h4>
-
-              <div className="d-flex gap-3 mb-4">
+              {/* <h4 className="footer-brand-title text-uppercase">{t('footer.brandTitle')}</h4> */}
+              <div className="footer-logo-container mb-3">
+                <img
+                  src={logoImg}
+                  alt="Unique T Fabric"
+                  className="img-fluid"
+                  style={{ width: '190px', height: 'auto' }}
+                />
+                <p className="small text-secondary fst-italic">{t('footer.tagline')}</p>
+              </div>
+              <div className="d-flex gap-3 mb-4 pt-4">
                 <div className="footer-icon-box flex-shrink-0 mt-1">
                   <MapPin size={18} />
                 </div>
@@ -52,7 +61,7 @@ const Footer = () => {
                 </address>
               </div>
 
-              <div className="d-flex flex-column gap-2">
+              <div className="d-flex flex-column gap-3">
                 <a href="tel:8069640559" className="footer-contact-item">
                   <div className="footer-icon-box">
                     <Phone size={18} />
@@ -103,14 +112,15 @@ const Footer = () => {
             {/* Logo/Newsletter Place */}
             <div className="col-lg-3 col-md-6 text-center text-lg-end" data-aos="fade-up" data-aos-delay="300">
               <div className="footer-logo-container mb-3">
+                <a href="https://thynktech.ltd/">
                 <img
-                  src={logoImg}
+                  src={TTI}
                   alt="Unique T Fabric"
                   className="img-fluid"
-                  style={{ width: '190px', height: 'auto' }}
+                  style={{ width: '300px', height: 'auto' }}
                 />
+                </a>
               </div>
-              <p className="small text-secondary fst-italic">{t('footer.tagline')}</p>
             </div>
 
           </div>

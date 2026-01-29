@@ -32,40 +32,40 @@ const WhyChooseUs = () => {
     }
   ];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Staggered Entry for Stats
-      gsap.fromTo(cardsRef.current,
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%"
-          }
-        }
-      );
-    }, sectionRef);
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     // Staggered Entry for Stats
+  //     gsap.fromTo(cardsRef.current,
+  //       { y: 100, opacity: 0 },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         duration: 1,
+  //         stagger: 0.2,
+  //         ease: "power3.out",
+  //         scrollTrigger: {
+  //           trigger: sectionRef.current,
+  //           start: "top 80%"
+  //         }
+  //       }
+  //     );
+  //   }, sectionRef);
 
-    // Initialize Vanilla Tilt
-    const validCards = cardsRef.current.filter(el => el !== null);
-    VanillaTilt.init(validCards, {
-      max: 15,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.1,
-      scale: 1.05
-    });
+  //   // Initialize Vanilla Tilt
+  //   const validCards = cardsRef.current.filter(el => el !== null);
+  //   VanillaTilt.init(validCards, {
+  //     max: 15,
+  //     speed: 400,
+  //     glare: true,
+  //     "max-glare": 0.1,
+  //     scale: 1.05
+  //   });
 
-    return () => {
-      ctx.revert();
-      validCards.forEach(el => el.vanillaTilt && el.vanillaTilt.destroy());
-    };
-  }, []);
+  //   return () => {
+  //     ctx.revert();
+  //     validCards.forEach(el => el.vanillaTilt && el.vanillaTilt.destroy());
+  //   };
+  // }, []);
 
   return (
     <section id="whyUs" className="py-5 bg-light text-center" ref={sectionRef}>

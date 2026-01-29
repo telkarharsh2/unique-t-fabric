@@ -14,15 +14,15 @@
     flex-direction: column;
     color: #444;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.05);
     z-index: 1;
 }
 
 .wcu-card:hover {
-    background: #ffffff;
-    transform: translateY(-5px);
+    background: #fcf4c7;
+    /* transform: translateY(-5px); */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border-color: rgba(128, 0, 0, 0.2);
     /* Subtle maroon border on hover */

@@ -11,7 +11,7 @@
 
 /* Gradient Top Line */
 .footer-gradient-line {
-    height: 4px;
+    height: 2px;
     background: linear-gradient(90deg, #800000, #ffc107, #800000);
     width: 100%;
 }

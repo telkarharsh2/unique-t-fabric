@@ -94,7 +94,7 @@ const AboutUs = () => {
               </blockquote>
             </figure>
 
-            <a href="https://thynktech.ltd/products/unique-t-fabric" className="btn btn-dark btn-lg rounded-pill px-5 shadow-sm hover-scale">
+            <a href="https://thynktech.ltd" className="btn btn-dark btn-lg rounded-pill px-5 shadow-sm hover-scale">
               {t('about.button')}
             </a>
           </div>

@@ -95,7 +95,7 @@ const Facilities = () => {
           {facilitiesDataFixed.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={index} className="col-md-6 col-lg-4">
+              <div key={index} className="col-md-6 col-lg-4 ">
                 <div
                   className="magic-card h-100 p-3" // Added p-3 here explicitly if not handled by CSS, or assuming magic-card has padding we want to override/reduce?
                   ref={el => cardsRef.current[index] = el}

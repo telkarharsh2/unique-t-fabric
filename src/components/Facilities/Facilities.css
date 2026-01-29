@@ -6,11 +6,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
     padding-bottom: 2rem;
     box-sizing: border-box;
     min-height: auto;
     /* Allow it to fit content */
+}
+
+/* Increase gap between cards by adding margin-bottom to card columns */
+.facilities-container .row.g-3 > [class^='col-'],
+.facilities-container .row.g-3 > [class*=' col-'] {
+    padding: 1rem;
 }
 
 .magic-card {
@@ -41,7 +47,7 @@
 .magic-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    background: #ffffff;
+    background: #fcf4c7;
     border-color: rgba(255, 193, 7, 0.3);
     /* Subtle gold border on hover */
 }
