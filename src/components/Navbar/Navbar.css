@@ -38,15 +38,12 @@
 
 /* Vertical Dock Styles */
 .nav-icon-link {
+    width: fit-content;
     color: var(--color-maroon);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: transparent;
 
     height: 40px;
-    width: 100%;
-    /* 🔥 IMPORTANT */
-    max-width: 160px;
-    /* controls tooltip distance */
     padding: 0 12px;
 
     display: flex;
@@ -66,11 +63,10 @@
 
 /* Hover Effects */
 .nav-icon-link:hover {
-
     /* Subtle Maroon tint */
     color: var(--color-gold);
     /* Golden Yellow on Hover */
-
+    background: rgba(219, 219, 219, 0.1);
     /* Gold Glow */
     transform: scale(1.3);
 }
@@ -96,9 +92,10 @@
     left: 80%;
     top: 50%;
     transform: translateY(-50%) translateX(-20px);
-    background: rgba(255, 255, 255, 0.95);
+    /* background: rgba(255, 255, 255, 0.95); */
     /* White background */
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     color: var(--color-maroon);
     /* Maroon text */
@@ -117,18 +114,7 @@
 }
 
 /* Tooltip Arrow */
-.text-label::before {
-    content: '';
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    /* White arrow */
-    margin-right: -1px;
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent rgba(255, 255, 255, 0.95) transparent transparent;
-}
+
 
 .nav-icon-link:hover .text-label {
     opacity: 1;
@@ -280,16 +266,16 @@
 @media (max-width: 991px) {
     .nav-icon-link {
         width: auto;
-        height: 45px;
-        padding: 0 15px;
+        height: 40px;
+        padding: 0 12px;
         background: transparent;
-        border-radius: 50px !important;
+        border-radius: 12px !important;
         justify-content: center;
         margin: 0;
     }
 
     .nav-icon-link:hover {
-        transform: translateY(-2px);
+        transform: none;
         background: transparent;
         box-shadow: none;
     }
@@ -299,82 +285,87 @@
         width: 100% !important;
         height: auto;
         position: relative;
-        /* Make transparent to remove 'white border' look */
         border: none !important;
         background: transparent !important;
         box-shadow: none !important;
-        padding: 10px 20px;
+        padding: 8px 16px;
         bottom: auto;
         top: 0;
         left: 0;
         gap: 0;
         pointer-events: none;
-        /* Let clicks pass through empty space */
         justify-content: flex-end;
-        /* Push button to right if needed, or keep as is */
     }
 
     /* Enable pointer events on the toggler button specifically */
     .glass-navbar button {
         pointer-events: auto;
-        background: rgba(255, 255, 255, 0.8) !important;
-        /* Give button a bg instead */
-        padding: 8px;
-        border-radius: 8px;
-        width: 45px;
-        height: 45px;
+        padding: 6px;
+        border-radius: 12px;
+        width: 42px;
+        height: 42px;
         display: flex;
         align-items: center;
         justify-content: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .glass-navbar button:hover {
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        transform: translateY(-1px);
     }
 
     /* Floating mobile wrapper */
     .mobile-wrapper {
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 32px);
-        max-width: 760px;
-        top: 12px;
+        left: 16px;
+        right: 16px;
+        width: auto;
+        top: 16px;
         z-index: 1000;
         pointer-events: auto;
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
     }
 
     .mobile-wrapper .glass-navbar {
         width: fit-content !important;
-        padding: 8px 14px;
-        border-radius: 14px !important;
-        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        background: rgba(255, 255, 255, 0.86) !important;
+        padding: 4px;
+        border-radius: 16px !important;
+        box-shadow: none;
+        border: none;
+        background: transparent !important;
         height: auto;
-        gap: 8px;
+        gap: 0;
     }
 
     /* Custom mobile popover (appears below the fixed top navbar) */
     .mobile-popover {
+        width: fit-content;
         position: fixed;
-        left: 10px;
-        right: 10px;
-        top: 80px;
+        left: 16px;
+        right: 16px;
+        top: 72px;
         z-index: 999;
-        padding: 24px 20px;
+        padding: 8px;
         border-radius: 20px !important;
-        transform: translateY(-15px) scale(0.95);
+        transform: translateY(-10px) scale(0.96);
         visibility: hidden;
         opacity: 0;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         display: flex;
         justify-content: center;
         pointer-events: none;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        background: rgba(255, 255, 255, 0.9) !important;
-        /* Higher opacity for realism */
-        backdrop-filter: blur(16px);
-        /* Heavy blur for premium glass effect */
-        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.75) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     .mobile-popover.show {
@@ -388,47 +379,44 @@
         width: 100%;
         max-height: calc(100vh - 100px);
         overflow-y: auto;
-        padding: 10px 5px;
+        padding: 4px;
     }
 
     .mobile-nav-list {
         list-style: none;
         margin: 0;
-        padding: 6px 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 6px;
     }
 
     /* Make nav items full width on mobile popover */
     .mobile-popover .nav-icon-link {
         width: 100%;
-        padding: 14px 18px;
+        padding: 12px 16px;
         border-radius: 14px !important;
         justify-content: flex-start;
-        gap: 16px;
-        background: rgba(0, 0, 0, 0.02);
-        /* Subtle fill */
-        border: 1px solid transparent;
-        transition: all 0.2s;
+        gap: 14px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.2s ease;
     }
 
     .mobile-popover .nav-icon-link:active {
-        background: rgba(128, 0, 0, 0.08);
-        /* Maroon tint on touch */
+        background: rgba(128, 0, 0, 0.1);
         transform: scale(0.98);
+        border-color: rgba(128, 0, 0, 0.2);
     }
 
     .mobile-popover .icon-box-inner {
-        width: 32px;
-        height: 32px;
-        background: #fff;
+        width: 28px;
+        height: 28px;
         border-radius: 8px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        /* Icon depth */
+        background: rgba(128, 0, 0, 0.05);
     }
 
     /* Show labels inside the mobile popover (override hidden state) */
@@ -440,24 +428,24 @@
         transform: none;
         padding: 0;
         color: #333;
-        /* Darker, more legible */
         font-family: 'Outfit', sans-serif;
         font-weight: 600;
-        font-size: 1.05rem;
+        font-size: 0.95rem;
         white-space: normal;
         opacity: 1;
         visibility: visible;
         margin-left: 0;
+        background: transparent;
+        box-shadow: none;
     }
 }
 
 /* Fixed Floating Language Button (Top Right) - Restored */
 .fixed-lang-btn {
     position: fixed;
-    top: 25px;
+    top: 10px;
     right: 25px;
     z-index: 2100;
-    /* Above modal overlay (2000) if needed */
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(128, 0, 0, 0.1);
@@ -478,30 +466,28 @@
     box-shadow: 0 8px 25px rgba(128, 0, 0, 0.15);
 }
 
-.text-maroon {
-    color: #800000;
+/* Mobile optimized language button */
+@media (max-width: 991px) {
+    .fixed-lang-btn {
+        top: 16px;
+        right: 70px;
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .fixed-lang-btn:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.85);
+    }
 }
 
-position: fixed;
-left: 0;
-right: 0;
-top: 76px;
-/* space for floating top navbar */
-z-index: 999;
-padding: 20px 16px;
-border-radius: 14px !important;
-transform: translateY(-10px);
-visibility: hidden;
-opacity: 0;
-transition: transform 0.28s ease,
-opacity 0.28s ease,
-visibility 0.28s;
-display: flex;
-justify-content: center;
-pointer-events: none;
-box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
-border: 1px solid rgba(0, 0, 0, 0.06);
-background: rgba(255, 255, 255, 0.86) !important;
+.text-maroon {
+    color: #800000;
 }
 
 .mobile-popover.show {
@@ -560,5 +546,4 @@ background: rgba(255, 255, 255, 0.86) !important;
     margin-left: 12px;
     pointer-events: auto;
     font-size: 1rem;
-}
 }
